@@ -133,44 +133,34 @@ flex-grow: 1;
     align-items: flex-start;
     padding: 0px;
     gap: 8px;
-
     width: 285px;
-
-
-
 /* Inside auto layout */
 
 flex: none;
 order: 1;
 flex-grow: 0;
+}
+.nav-title {
+    font-weight: 600;
 }
 .casillanav{
     display: flex;
-flex-direction: row;
-align-items: center;
-padding: 10px;
-gap: 16px;
-
-width: 285px;
-height: 50px;
-
-background: #FFFFFF;
-box-shadow: inset 0px -2px 0px #BDC9D1;
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 16px;
+    width: 285px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: inset 0px -2px 0px #BDC9D1;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
-.icon{
+.icon {
     width: 30px;
-height: 30px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    height: 30px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }

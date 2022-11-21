@@ -7,6 +7,11 @@
   font-family: 'gobCL';
   src: local('static/fonts/gobCL_Regular.otf') format("opentype");
 }
+@font-face {
+  font-family: 'gobCL';
+  font-weight: 600;
+  src: local('static/fonts/gobCL_Bold.otf') format("opentype");
+}
 
 body {
   font-family: 'gobCL';

@@ -2,18 +2,18 @@
     
 }
 .hola{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 25px 30px;
-gap: 8px;
-background: #FFFFFF;
-box-shadow: inset 0px -1px 0px #BDC9D1;
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 25px 30px;
+    gap: 8px;
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px #BDC9D1;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
 .hola2{
@@ -47,11 +47,11 @@ align-self: stretch;
 flex-grow: 0;
 }
 .letra1{
-font-family: 'gobCL';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 22px;
+    font-family: 'gobCL';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .letra2{
@@ -63,14 +63,15 @@ line-height: 22px;
     }
 
 .columnas{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: baseline;
-gap: 4px;
-background: #FFFFFF;
-box-shadow: inset 0px -1px 0px #BDC9D1;
-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px;
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px #BDC9D1;
+    width: 100%;
+    padding: 10px 0px;
 }
 
 .letra3{

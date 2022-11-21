@@ -129,13 +129,13 @@ flex-grow: 1;
 }
 .portal2{
     display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
 
-width: 285px;
-height: 150px;
+    width: 285px;
+
 
 
 /* Inside auto layout */

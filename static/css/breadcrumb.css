@@ -1,0 +1,28 @@
+.bc-container {
+  display: flex;
+  width: 100%;
+}
+.bc-wrapper {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+ul.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  max-width: 1000px;
+}
+ul.breadcrumb li {
+  display: flex;
+  align-items: baseline;
+}
+ul.breadcrumb li a:not(last-child) {
+  text-decoration: underline;
+  color: hsla(200, 10%, 31%, 1);
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: hsla(200, 10%, 31%, 1);
+  content: "/\00a0";
+}

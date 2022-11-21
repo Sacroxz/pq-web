@@ -1,0 +1,49 @@
+nav {
+  height: 250px;
+  background: url('https://redsalud.ssmso.cl/wp-content/uploads/2021/07/header_1920x1440.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style: none;
+}
+a.nav-link {
+  color: hsla(200, 10%, 31%, 1);
+  display: block;
+  text-decoration: none;
+  padding: 18px 10px 12px;
+  width: 100%;
+  text-align: center;
+}
+.logo-container {
+  height: 100%;
+}
+.nav-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 1000px;
+  height: 100%;
+}
+.topnav {
+  display: flex;
+}
+.menu {
+  cursor: pointer;
+  padding: 18px 10px 12px;
+  text-align: center;
+}
+.nav-link-container, .menu {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  border-left: solid 1px #E6E6E6;
+  border-bottom: solid 2px #BDC9D1;
+}
+
+/* Media Queries */

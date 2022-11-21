@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ffooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    
+    position: absolute;
+    width: 1440px;
+    height: 272px;
+    left: 0px;
+    top: 1290px;
+}
+.conjunto{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+width: 1000px;
+height: 272px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.conjunto2{
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+width: 1000px;
+height: 202px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+.casilla{
+    /* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 30px 35px;
+gap: 10px;
+
+width: 333.33px;
+height: 202px;
+
+background: #FFFFFF;
+box-shadow: inset -1px 0px 0px #CFCFCF;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 1;
+}
+.down{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px 0px;
+    gap: 10px;
+    
+    width: 690px;
+    height: 67px;
+
+    flex: auto;
+    order: 3;
+    flex-grow: 0;
+    
+}
+
+.titulo{
+    color:
+    #0F69B4
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 0px;
+    gap: 24px;
+
+    width: 285px;
+    height: 642px;
+
+
+/* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.portal{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+
+    width: 285px;
+    height: 188px;
+
+
+/* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.portal2{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 285px;
+height: 150px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.casillanav{
+    display: flex;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 16px;
+
+width: 285px;
+height: 50px;
+
+background: #FFFFFF;
+box-shadow: inset 0px -2px 0px #BDC9D1;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.icon{
+    width: 30px;
+height: 30px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}

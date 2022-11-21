@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proceso Quirurgico | Home</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/global.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/prueba2.css')}}">
+</head>
+<body>
+  {% include 'components/navbar.html' %}
+  <div class="app">
+    <div class="wrapper">
+      {% include 'components/breadcrumb.html' %}
+      <div class="wrapper-column">
+      {% include 'components/navigate.html'%}
+      <div class="cubo">
+          <div class="hola">
+              <p class="letra1">Buenas tardes Julio</p>
+              <p class="letra2">
+                Bienvenido al Sistema de Gestion Quirurgica del Servicio de Salud Metropolitano Sur Oriente.
+              </p>
+          </div>
+          <div class="hola2">
+            <p class="letra3">Anuncios</p>
+              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+          </div>
+    
+          <div class="hola3">
+            <p class="letra3">Actualizaciones</p>
+            <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+          </div>
+        </div>
+      </div>
+      {% include 'components/footer.html' %}
+    </div>
+    
+  </div>
+</body>
+</html>

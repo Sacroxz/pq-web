@@ -1,17 +1,18 @@
 .bc-container {
   display: flex;
   width: 100%;
+  justify-content: flex-start;
 }
 .bc-wrapper {
+  width: 100%;
   padding-top: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 ul.breadcrumb {
   display: flex;
   align-items: center;
   list-style: none;
-  max-width: 1000px;
 }
 ul.breadcrumb li {
   display: flex;

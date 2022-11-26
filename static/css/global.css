@@ -17,3 +17,21 @@ body {
   font-family: 'gobCL';
   color: hsla(200, 10%, 31%, 1);
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+}
+.wrapper-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 40px;
+}
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}

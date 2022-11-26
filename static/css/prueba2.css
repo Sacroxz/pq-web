@@ -1,12 +1,12 @@
 .cubo{
-    
+    width: 100%;
 }
 .hola{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 25px 30px;
+    padding: 0px 0px;
     gap: 8px;
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px #BDC9D1;
@@ -21,11 +21,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-padding: 25px 30px;
+padding: 24px 0px;
 gap: 8px;
 margin-top: 8px;
 background: #FFFFFF;
-box-shadow: inset 0px -1px 0px #BDC9D1;
 flex: none;
 order: 1;
 align-self: stretch;
@@ -36,7 +35,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-padding: 25px 30px;
+padding: 24px 0px;
 gap: 8px;
 margin-top: 8px;
 

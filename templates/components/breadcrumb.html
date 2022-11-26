@@ -6,7 +6,7 @@
     <ul class="breadcrumb">
       {% for l in links %}
         {% if l != links[-1] %}
-          <li><a href="#">{{ l['name'] }}</a></li>
+          <li><a href={{ l['url'] }}>{{ l['name'] }}</a></li>
         {% else %}
           <li>{{ l['name'] }}</a></li>
         {% endif %}

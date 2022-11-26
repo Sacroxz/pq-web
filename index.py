@@ -17,4 +17,4 @@ def post_cuidados():
     return render_template("post.html")
 
 if __name__ == '__main__':
-    app.run(port=1521)
+    app.run()

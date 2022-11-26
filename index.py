@@ -5,12 +5,7 @@ import oracledb
 app = Flask(__name__)
 app.secret_key = "super secret key"
 
-
-# connection = cx_Oracle.connet(user=os.environ.get('DB_USER'), password=os.environ.get('DB_PASSWORD'), dsn="ehuurlu4scvu47zv_low", encoding="UTF-8")
-connection = oracledb.connect(user="admin", password="x52JjUGZrTa8VZw", dsn="ehuurlu4scvu47zv_high", config_dir="opt/config", wallet_location="opt/config", wallet_password="x52JjUGZrTa8VZw", encoding="UTF-8")
-# connection = oracledb.connect(user=os.environ.get('DB_USER'), password=os.environ.get('DB_PASSWORD'), dsn=os.environ.get('DB_DSN'), config_dir="opt/config", wallet_location="opt/config", wallet_password=os.environ.get('DB_PASSWORD'), encoding="UTF-8")
-
-print("Database version:", connection.version)
+connection = oracledb.connect(user=os.environ.get('DB_USER'), password=os.environ.get('DB_PASSWORD'), dsn=os.environ.get('DB_DSN'), config_dir="opt/config", wallet_location="opt/config", wallet_password=os.environ.get('DB_PASSWORD'), encoding="UTF-8")
 
 @app.route("/")
 def home():
@@ -55,16 +50,16 @@ def login_post():
     cur = connection.cursor()
     cur = cur.execute("SELECT * FROM USUARIOS WHERE correo = :email AND contrasena = :password", email=email, password=password)
     user = cur.fetchone()
+    # TODO: Autenticar al usuario
     if not user:
         flash('Tu correo o contraseña son incorrectos')
         return redirect(url_for('login'))
     return redirect(url_for('home'))
 
-
 @app.route('/logout')
 def logout():
+    # TODO: Implementar Logout
     return 'Logout'
-
 
 if __name__ == '__main__':
     app.run()

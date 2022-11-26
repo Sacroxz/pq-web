@@ -1,15 +1,19 @@
+import os
 from flask import Flask, render_template
-# import oracledb
+import oracledb
 
 app = Flask(__name__)
 
-# connection = cx_Oracle.connect(user="admin", password="x52JjUGZrTa8VZw", dsn="ehuurlu4scvu47zv_low", encoding="UTF-8")
+# connection = cx_Oracle.connect(user=os.environ.get('DB_USER'), password=os.environ.get('DB_PASSWORD'), dsn="ehuurlu4scvu47zv_low", encoding="UTF-8")
 # connection = oracledb.connect(user="admin", password="x52JjUGZrTa8VZw", dsn="ehuurlu4scvu47zv_high", config_dir="opt/config", wallet_location="opt/config", wallet_password="x52JjUGZrTa8VZw", encoding="UTF-8")
-# print("Database version:", connection.version)
+connection = oracledb.connect(user=os.environ.get('DB_USER'), password=os.environ.get('DB_PASSWORD'), dsn=os.environ.get('DB_DSN'), config_dir="opt/config", wallet_location="opt/config", wallet_password=os.environ.get('DB_PASSWORD'), encoding="UTF-8")
+
+print("Database version:", connection.version)
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    data = connection.version
+    return render_template("home.html", data=data)
 
 @app.route('/prequirurgico')
 def prequirurgico():

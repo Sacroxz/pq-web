@@ -11,6 +11,34 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
+@app.route('/prequirurgico')
+def prequirurgico():
+    links = [
+            {'name': 'Home', 'url': '/'}, 
+            {'name': 'Fase Prequirurgica', 'url': '/prequirurgico'}]
+
+    return render_template("prequirurgico.html", links=links)
+
+@app.route("/quirurgico")
+def quirurgico():
+    links = [
+            {'name': 'Home', 'url': '/'}, 
+            {'name': 'Fase Quirurgica', 'url': '/quirurgico'}]
+    return render_template("quirurgico.html", links=links)
+
+@app.route("/postquirurgico")
+def postquirurgico():
+    links = [
+            {'name': 'Home', 'url': '/'}, 
+            {'name': 'Fase Postquirurgica', 'url': '/postquirurgico'}]
+    return render_template("postquirurgico.html", links=links)
+
+@app.route("/login")
+def login():
+    links = [
+        {'name': 'Home', 'url': '/'}, 
+        {'name': 'Iniciar Sesion', 'url': '/login'}]
+    return render_template("login.html", links=links)
 # TODO: Add post logic.
 # @app.route("/post", methods=["POST"])
 # def post_cuidados():

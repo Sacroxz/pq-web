@@ -4,9 +4,13 @@
 <div class="bc-container">
   <div class="bc-wrapper">
     <ul class="breadcrumb">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Intranet</a></li>
-      <li>Gestion Quirurgica</li>
+      {% for l in links %}
+        {% if l != links[-1] %}
+          <li><a href="#">{{ l['name'] }}</a></li>
+        {% else %}
+          <li>{{ l['name'] }}</a></li>
+        {% endif %}
+      {% endfor %}
     </ul>
   </div>
 </div>

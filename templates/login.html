@@ -16,6 +16,20 @@
     <div class="wrapper">
       {% include 'components/breadcrumb.html' %}
         <!-- TODO: Maquetar el Login -->
+        <form method="POST" action="/login">
+          <label for="email">Correo Electronico</label>
+          <input type="email" name="email">
+          <label for="password">Contraseña</label>
+          <input type="password" name="password">
+          <input type="submit" value="Iniciar Sesion">
+        </form>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div>
+              {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
       {% include 'components/footer.html' %}
     </div>
   </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SSMSO | Fase Quirurgica</title>
+    <title>SSMSO | Iniciar Sesion</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static',filename='css/global.css') }}"
@@ -27,14 +27,16 @@
     {% include 'components/navbar.html' %}
     <div class="app">
       <div class="wrapper">
-        {% include 'components/breadcrumb.html' %} 
-        {% if session['cargo'] != 'Enfermero' %}
-          {% include 'components/unauthorized.html' %}
-        {% else %}
-          <h1>Bienvenido!</h1>
-        {% endif %}
-        {% include 'components/footer.html' %}
-      </div>
+        {% include 'components/breadcrumb.html' %}
+        <h3>Datos Personales</h3>
+        <p>Nombre Completo: {{ data.nombre }} {{ data.apellido }}</p>
+        <p>RUT: {{ data.rut }}</p>
+        <p>Telefono: {{ data.telefono }}</p>
+        <p>Correo Electronico: {{ data.mail }}</p>
+        <p>Cargo: {{ data.cargo }}</p>
+        <a href="/logout" style="width: max-content">
+          <button style="cursor: pointer">Cerrar Sesion</button>
+        </a>
     </div>
   </body>
 </html>

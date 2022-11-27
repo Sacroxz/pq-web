@@ -15,7 +15,12 @@
   <div class="app">
     <div class="wrapper">
       {% include 'components/breadcrumb.html' %}
-      <h1>Bienvenido!</h1>
+      {% if session['cargo'] != 'Anestesista' and session['cargo'] != 'Enfermera' %}
+        {% include 'components/unauthorized.html' %}
+      {% else %}
+        <h1>Bienvenido!</h1>
+      {% endif %}
+      <!-- TODO: Agregar vistas de formularios -->
       {% include 'components/footer.html' %}
     </div>
   </div>

@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSMSO | Iniciar Sesion</title>
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/global.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
-  <link rel="stylesheet" href="{{url_for('static',filename='css/prueba2.css')}}">
-  <link rel="icon" href="https://ssmc.redsalud.gob.cl/wrdprss_minsal/wp-content/uploads/2016/04/cropped-lssmc180-32x32.jpg" sizes="32x32">
-</head>
-<body>
-  {% include 'components/navbar.html' %}
-  <div class="app">
-    <div class="wrapper">
-      {% include 'components/breadcrumb.html' %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSMSO | Iniciar Sesion</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/home.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/prueba2.css')}}"
+    />
+    <link
+      rel="icon"
+      href="https://ssmc.redsalud.gob.cl/wrdprss_minsal/wp-content/uploads/2016/04/cropped-lssmc180-32x32.jpg"
+      sizes="32x32"
+    />
+  </head>
+  <body>
+    {% include 'components/navbar.html' %}
+    <div class="app">
+      <div class="wrapper">
+        {% include 'components/breadcrumb.html' %}
         <!-- TODO: Maquetar el Login -->
         <form method="POST" action="/login">
-          <label for="email">Correo Electronico</label>
+          {{ form.hidden_tag() }}
+          {{ form.mail }}
+          {{ form.password }}
+          {{ form.submit }}
+          <!-- <label for="email">Correo Electronico</label>
           <input type="email" name="email">
           <label for="password">Contraseña</label>
           <input type="password" name="password">
-          <input type="submit" value="Iniciar Sesion">
+          <input type="submit" value="Iniciar Sesion"> -->
         </form>
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            <div>
-              {{ messages[0] }}
-            </div>
-          {% endif %}
-        {% endwith %}
-      {% include 'components/footer.html' %}
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div>{{ messages[0] }}</div>
+        {% endif %} {% endwith %} {% include 'components/footer.html' %}
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

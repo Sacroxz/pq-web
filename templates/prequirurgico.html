@@ -15,7 +15,11 @@
   <div class="app">
     <div class="wrapper">
       {% include 'components/breadcrumb.html' %}
-      {% include 'components/unauthorized.html' %}
+      {% if session['cargo'] != 'Enfermero' %}
+        {% include 'components/unauthorized.html' %}
+      {% else %}
+        <h1>Bienvenido!</h1>
+      {% endif %}
       {% include 'components/footer.html' %}
     </div>
   </div>

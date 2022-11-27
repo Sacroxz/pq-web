@@ -7,34 +7,34 @@
       <img src="https://redsalud.ssmso.cl/wp-content/uploads/2016/08/isologo-ssmso.jpg" alt="logo"/>
     </div>
     <ul class="topnav">
-        <li class="nav-link-container">
+        <li class="nav-link-container {{ 'active' if active_page == 'home' else ''}}">
           <a href="/" class="nav-link">
             Home
           </a>
         </li>
-        <li class="nav-link-container">
+        <li class="nav-link-container {{ 'active' if active_page == 'prequirurgico' else ''}}">
           <a href="/prequirurgico" class="nav-link">
             Fase Pre-Quirurgica
           </a>
         </li>
-        <li class="nav-link-container">
+        <li class="nav-link-container {{ 'active' if active_page == 'quirurgico' else ''}}">
           <a href="/quirurgico" class="nav-link">
             Fase Quirurgica
           </a>
         </li>
-        <li class="nav-link-container">
+        <li class="nav-link-container {{ 'active' if active_page == 'postquirurgico' else ''}}">
           <a href="/postquirurgico" class="nav-link">
             Fase Post-Quirurgica
           </a>
         </li>
         {% if session['logged_in'] %}
-        <li class="nav-link-container">
+        <li class="nav-link-container {{ 'active' if active_page == 'perfil' else ''}}">
           <a href="/perfil" class="nav-link">
             Mi Perfil
           </a>
         </li>
         {% else %}
-        <li class="nav-link-container">
+        <li class="nav-link-container {{ 'active' if active_page == 'login' else ''}}">
           <a href="/login" class="nav-link">
             Iniciar Sesion
           </a>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/global.css') }}">
+  <link rel="icon" href="https://ssmc.redsalud.gob.cl/wrdprss_minsal/wp-content/uploads/2016/04/cropped-lssmc180-32x32.jpg" sizes="32x32"/>
+  <title>{% block title %}{% endblock %} | SSMSO </title>
+  {% endblock %}
+</head>
+<body>
+  {% include 'components/navbar.html' %}
+  <div class="app">
+    <div class="wrapper">
+      {% include 'components/breadcrumb.html' %}
+        {% block content %}
+        {% endblock %}
+      {% include 'components/footer.html' %}
+    </div>
+  </div>
+</body>
+</html>

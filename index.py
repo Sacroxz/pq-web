@@ -11,6 +11,7 @@ sys.modules["cx_Oracle"] = oracledb
 
 app = Flask(__name__)
 
+# For Vercel
 DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_DSN = os.environ.get('DB_DSN')
@@ -46,8 +47,9 @@ def load_user(user_id):
 
 @app.route("/")
 def home():
-    print('usuarios:', Usuario.query.all())
-    return render_template("home.html")
+    links = [{'name': 'Home', 'url': '/'}]
+    # print('usuarios:', Usuario.query.all())
+    return render_template("home.html", links=links)
 
 @app.route('/prequirurgico')
 def prequirurgico():

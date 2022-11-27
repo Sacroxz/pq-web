@@ -1,53 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSMSO | Home</title>
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/global.css') }}">
+{% extends "layout.html" %}
+{% set active_page = "home" %}
+{% block title %} Home {% endblock %}
+{% block head %}
+  {{ super () }}
   <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
-  <link rel="stylesheet" href="{{url_for('static',filename='css/prueba2.css')}}">
-  <link rel="icon" href="https://ssmc.redsalud.gob.cl/wrdprss_minsal/wp-content/uploads/2016/04/cropped-lssmc180-32x32.jpg" sizes="32x32">
-</head>
-<body>
-  {% include 'components/navbar.html' %}
-  <div class="app">
-    <div class="wrapper">
-      {% include 'components/breadcrumb.html' %}
-      {% if session['logged_in'] %}
-      <div class="wrapper-column">
-      <!-- {% include 'components/navigate.html'%} -->
-      <p>{{ rows }}</p>
-      <div class="cubo">
-          <!-- <div class="hola">
-              <p class="letra1">Buenas tardes Julio</p>
-              <p class="letra2">
-                Bienvenido al Sistema de Gestion Quirurgica del Servicio de Salud Metropolitano Sur Oriente.
-              </p>
-          </div> -->
-          <div class="hola2">
-            <p class="letra3">Anuncios</p>
-              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-          </div>
-    
-          <div class="hola3">
-            <p class="letra3">Actualizaciones</p>
-            <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-              <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-          </div>
-        </div>
-      </div>
-      {% else %}
-      {% include 'components/unauthorized.html' %}
-      {% endif %}
-      {% include 'components/footer.html' %}
-    </div>
-    
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/prueba2.css') }}">
+{% endblock %}
+{% block content %}
+<div class="cubo">
+  <div class="hola">
+      <p class="letra1">Buenas tardes Julio</p>
+      <p class="letra2">
+        Bienvenido al Sistema de Gestion Quirurgica del Servicio de Salud Metropolitano Sur Oriente.
+      </p>
   </div>
-</body>
-</html>
+  <div class="hola2">
+    <p class="letra3">Anuncios</p>
+      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+  </div>
+
+  <div class="hola3">
+    <p class="letra3">Actualizaciones</p>
+    <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+  </div>
+</div>
+{% endblock %}

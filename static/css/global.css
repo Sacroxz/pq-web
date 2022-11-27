@@ -22,16 +22,44 @@ body {
   display: flex;
   flex-direction: column;
   width: 1000px;
+  padding: 0px 24px;
+  
 }
+
 .wrapper-column {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   gap: 40px;
 }
+
 .app {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  background-color: #e6e6e6;
+  height: 100vh;
+}
+.card img {
+  height: 100%;
+}
+.card {
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  border: solid 1px #BDC9D1;
+  margin-bottom: 12px;
+  padding-right: 24px;
+}
+.card:hover {
+  background-color: rgb(247, 247, 247);
+}
+.card-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

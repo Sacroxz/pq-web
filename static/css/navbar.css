@@ -46,4 +46,13 @@ a.nav-link {
   border-bottom: solid 2px #BDC9D1;
 }
 
+.nav-link-container:hover {
+  background: #eee;
+}
+li.nav-link-container.active a {
+  color: #0f69b4;
+}
+.active {
+  border-bottom: 2px solid #0f69b4;
+}
 /* Media Queries */

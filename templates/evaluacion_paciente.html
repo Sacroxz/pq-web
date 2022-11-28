@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% set active_page = "postquirurgico" %}
+{% block title %} Formulario de Evaluacion de Paciente {% endblock %}
+{% block head %}
+  {{ super () }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/multi_step_form.css')}}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+  <form method="POST" action="/evaluacion_paciente">
+    <div class="tab">
+      <h3>Seleccionar Paciente</h3>
+      <p>RUT del Paciente</p>
+      {{ rut_form.rut }}
+    </div>
+    <div class="tab">
+      <h3>Evaluacion del Paciente</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Temperatura</p>
+          {{ evaluacion_paciente_form.temperatura }}
+        </div>
+        <div class="col-md-6">
+          <p>Frecuencia Cardiaca</p>
+          {{ evaluacion_paciente_form.frecuencia_cardiaca }}
+        </div>
+        <div class="col-md-6">
+          <p>Presion Arterial</p>
+          {{ evaluacion_paciente_form.presion_arterial }}
+        </div>
+        <div class="col-md-6">
+          <p>Frecuencia Respiratoria</p>
+          {{ evaluacion_paciente_form.frecuencia_respiratoria }}
+        </div>
+        <div class="col-md-6">
+          <p>Examen Fisico</p>
+          {{ evaluacion_paciente_form.examen_fisico }}
+        </div>
+        <div class="col-md-6">
+          <p>Zona Operacion</p>
+          {{ evaluacion_paciente_form.zona_operacion }}
+        </div>
+      </div>
+    </div>
+    <div class="tab">
+      <h3>Observacion</h3>
+      <p>Observacion (opcional)</p>
+      {{ evaluacion_paciente_form.observacion }}
+    </div>
+    <div>
+      <button type="button" id="prevBtn" class="form-btn" onClick="nextPrev(-1)">Atras</button>
+      <button type="button" id="nextBtn" class="form-btn" onClick="nextPrev(1)">Siguiente</button>
+    </div>
+    <!-- Circles which indicate the steps of the form -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+  </form>
+  <script src="{{url_for('static',filename='js/multi_step_form.js')}}"></script>
+  {% include 'components/footer.html' %}
+{% endblock %}

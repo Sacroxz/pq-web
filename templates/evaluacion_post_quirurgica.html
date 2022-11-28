@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% set active_page = "postquirurgico" %}
+{% block title %} Formulario de Evaluacion de Paciente {% endblock %}
+{% block head %}
+  {{ super () }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/multi_step_form.css')}}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+  <form method="POST" action="/evaluacion_paciente">
+    <div class="tab">
+      <h3>Seleccionar Paciente</h3>
+      <p>RUT del paciente</p>
+      {{ rut_form.rut }}
+    </div>
+    <div class="tab">
+      <h3>Evaluacion del Paciente</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Temperatura</p>
+          {{ evaluacion_post_quirurgica_form.temperatura }}
+        </div>
+        <div class="col-md-6">
+          <p>Pulso</p>
+          {{ evaluacion_post_quirurgica_form.pulso }}
+        </div>
+        <div class="col-md-6">
+          <p>Sangrado</p>
+          {{ evaluacion_post_quirurgica_form.sangrado }}
+        </div>
+        <div class="col-md-6">
+          <p>Presion Arterial</p>
+          {{ evaluacion_post_quirurgica_form.presion_arterial }}
+        </div>
+        <div class="col-md-6">
+          <p>Dolor</p>
+          {{ evaluacion_post_quirurgica_form.dolor }}
+        </div>
+        <div class="col-md-12">
+          <p>Recuperacion</p>
+          {{ evaluacion_post_quirurgica_form.recuperacion }}
+        </div>
+      </div>
+    </div>
+    <div class="tab">
+      <h3>Indicaciones de Cuidados</h3>
+      <p>Medicacion</p>
+      {{ evaluacion_post_quirurgica_form.medicacion }}
+      <p>Alimentacion</p>
+      {{ evaluacion_post_quirurgica_form.alimentacion }}
+      <p>Observacion (opcional)</p>
+      {{ evaluacion_post_quirurgica_form.observacion }}
+    </div>
+    <div>
+      <button type="button" id="prevBtn" class="form-btn" onClick="nextPrev(-1)">Atras</button>
+      <button type="button" id="nextBtn" class="form-btn" onClick="nextPrev(1)">Siguiente</button>
+    </div>
+    <!-- Circles which indicate the steps of the form -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+  </form>
+  <script src="{{url_for('static',filename='js/multi_step_form.js')}}"></script>
+  {% include 'components/footer.html' %}
+{% endblock %}

@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+a {
+  color: hsla(200, 10%, 31%, 1);
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+
 @font-face {
   font-family: 'gobCL';
   src: local('static/fonts/gobCL_Regular.otf') format("opentype");
@@ -17,6 +25,8 @@ body {
   font-family: 'gobCL';
   color: hsla(200, 10%, 31%, 1);
 }
+
+
 
 .wrapper {
   display: flex;
@@ -55,11 +65,14 @@ body {
   margin-bottom: 12px;
   padding-right: 24px;
 }
+
 .card:hover {
   background-color: rgb(247, 247, 247);
 }
+
 .card-items {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+

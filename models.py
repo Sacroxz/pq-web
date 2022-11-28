@@ -1,7 +1,7 @@
 from index import db
 from flask_login import UserMixin
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField
 from wtforms.validators import InputRequired, Length, ValidationError
 
 class LoginForm(FlaskForm):
@@ -9,7 +9,46 @@ class LoginForm(FlaskForm):
   password = PasswordField('password', validators=[InputRequired(), Length(min=4, max=80)], render_kw={"placeholder": "Password"})
   submit = SubmitField("Login")
 
-# class Usuario(db.Model, UserMixin):
+class RutForm(FlaskForm):
+  rut = StringField('rut', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Rut"})
+  submit = SubmitField("Buscar")
+  
+
+class EvaluacionPacienteForm(FlaskForm):
+  temperatura = StringField('temperatura', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Temperatura"})
+  pulso = StringField('pulso', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Pulso"})
+  presion_arterial = StringField('presion_arterial', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Presion Arterial"})
+  frecuencia_cardiaca = StringField('frecuencia_cardiaca', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Frecuencia Cardiaca"})
+  frecuencia_respiratoria = StringField('frecuencia_respiratoria', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Frecuencia Respiratoria"})
+  examen_fisico = TextAreaField('examen_fisico', validators=[InputRequired(), Length(min=4, max=200)], render_kw={"placeholder": "Examen Fisico"})
+  zona_operacion = TextAreaField('zona_operacion', validators=[InputRequired(), Length(min=4, max=200)], render_kw={"placeholder": "Zona Operacion"})
+  observacion = TextAreaField('observacion', validators=[Length(min=4, max=200)], render_kw={"placeholder": "Observacion"})
+  submit = SubmitField("Guardar")
+
+class EvaluacionPostquirurgicaForm(FlaskForm):
+  temperatura = StringField('temperatura', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Temperatura"})
+  pulso = StringField('pulso', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Pulso"})
+  presion_arterial = StringField('presion_arterial', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Presion Arterial"})
+  sangrado = StringField('sangrado', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Sangrado"})
+  dolor = SelectField('dolor', choices=["No dolor", "Leve", "Moderado", "Intenso", "Maximo Dolor"], validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Dolor"})
+  recuperacion = TextAreaField('recuperacion', validators=[InputRequired(), Length(min=4, max=200)], render_kw={"placeholder": "Recuperacion"})
+  medicacion = TextAreaField('medicacion', validators=[InputRequired(), Length(min=4, max=200)], render_kw={"placeholder": "Medicamentos"})
+  alimentacion = TextAreaField('alimentacion', validators=[InputRequired(), Length(min=4, max=200)], render_kw={"placeholder": "Alimentacion"})
+  observacion = TextAreaField('observacion', validators=[Length(min=4, max=200)], render_kw={"placeholder": "Observacion"})
+  submit = SubmitField("Guardar")
+
+class CoordinarTrasladoForm(FlaskForm):
+  fecha = StringField('fecha', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Fecha"})
+  hora = StringField('hora', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Hora"})
+  patente = StringField('patente', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Patente"})
+  tipo_vehiculo = StringField('tipo_vehiculo', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Tipo Vehiculo"})
+  rut_conductor = StringField('rut_conductor', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Rut Conductor"})
+  telefono_conductor = StringField('telefono_conductor', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Telefono Conductor"})
+  direccion = StringField('direccion', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Direccion"})
+  submit = SubmitField("Guardar")
+
+  
+  # class Usuario(db.Model, UserMixin):
 #   def __init__(self, rut, nombre, apellido, telefono, mail, contrasena):
 #     self.rut = rut
 #     self.nombre = nombre

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% set active_page = "postquirurgico" %}
+{% block title %} Formulario de Evaluacion de Paciente {% endblock %}
+{% block head %}
+  {{ super () }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/multi_step_form.css')}}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+
+{% endblock %}
+{% block content %}
+  <form method="POST" action="/evaluacion_paciente">
+    <div class="tab">
+      <h3>Seleccionar Paciente</h3>
+      <p>RUT del Paciente</p>
+      {{ rut_form.rut }}
+    </div>
+    <div class="tab">
+      <div class="row">
+        <h3>Coordinar Fecha y Direccion</h3>
+        <div class="col-md-6">
+          <p>Fecha</p>
+          {{ coordinar_traslado_form.fecha }}
+        </div>
+        <div class="col-md-6">
+          <p>Hora</p>
+          {{ coordinar_traslado_form.hora }}
+        </div>
+        <div class="col-md-6">
+          <p>Direccion</p>
+          {{ coordinar_traslado_form.direccion }}
+        </div>
+      </div>
+    </div>
+    <div class="tab">
+      <div class="row">
+        <h3>Datos del Transporte</h3>
+        <div class="col-md-6">
+          <p>Patente</p>
+          {{ coordinar_traslado_form.patente }}
+        </div>
+        <div class="col-md-6">
+          <p>RUT del Conductor</p>
+          {{ coordinar_traslado_form.rut_conductor }}
+        </div>
+        <div class="col-md-6">
+          <p>Tipo Vehiculo</p>
+          {{ coordinar_traslado_form.tipo_vehiculo }}
+        </div>
+        <div class="col-md-6">
+          <p>Telefono del Conductor</p>
+          {{ coordinar_traslado_form.telefono_conductor }}
+        </div>
+      </div>
+    </div>
+    <div>
+      <button type="button" id="prevBtn" class="form-btn" onClick="nextPrev(-1)">Atras</button>
+      <button type="button" id="nextBtn" class="form-btn" onClick="nextPrev(1)">Siguiente</button>
+    </div>
+    <!-- Circles which indicate the steps of the form -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+  </form>
+  <script src="{{url_for('static',filename='js/multi_step_form.js')}}"></script>
+  {% include 'components/footer.html' %}
+{% endblock %}

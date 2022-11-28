@@ -7,26 +7,30 @@
   <link rel="stylesheet" href="{{ url_for('static',filename='css/prueba2.css') }}">
 {% endblock %}
 {% block content %}
-<div class="cubo">
-  <div class="hola">
-      <p class="letra1">Buenas tardes Julio</p>
-      <p class="letra2">
-        Bienvenido al Sistema de Gestion Quirurgica del Servicio de Salud Metropolitano Sur Oriente.
-      </p>
-  </div>
-  <div class="hola2">
-    <p class="letra3">Anuncios</p>
-      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-  </div>
+{% if current_user.is_authenticated %}
+  <div class="cubo">
+    <div class="hola">
+        <p class="letra1">Buenas tardes {{ session['user'] }}</p>
+        <p class="letra2">
+          Bienvenido al Sistema de Gestion Quirurgica del Servicio de Salud Metropolitano Sur Oriente.
+        </p>
+    </div>
+    <div class="hola2">
+      <p class="letra3">Anuncios</p>
+        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+    </div>
 
-  <div class="hola3">
-    <p class="letra3">Actualizaciones</p>
-    <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+    <div class="hola3">
+      <p class="letra3">Actualizaciones</p>
       <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+    </div>
   </div>
-</div>
+{% else %}
+  {% include 'components/unauthorized.html' %}
+{% endif %}
 {% endblock %}

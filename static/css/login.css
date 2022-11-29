@@ -1,0 +1,59 @@
+form {
+  width: 100%;
+  max-width: 500px;
+}
+
+form > div {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+form > input {
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+}
+
+form > input[type="submit"] {
+  padding: 8px 8px;
+  margin-top: 32px;
+}
+
+.error {
+  color: #eb3646;
+}
+
+.login-container {
+  background-color: white;
+  width: 100%;
+  padding: 32px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  gap: 16px;
+}
+.login-container > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.login-container > div > p {
+  max-width: 500px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  --bs-gutter-x: 0 !important;
+}

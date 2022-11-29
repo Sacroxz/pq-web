@@ -111,4 +111,9 @@ input {
   z-index: 9999;
 }
 
+.centrar{
+  display: flex;
+  align-items: center;
+  justify-content: ;
+}
 

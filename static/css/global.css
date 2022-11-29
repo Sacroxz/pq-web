@@ -26,14 +26,25 @@ body {
   color: hsla(200, 10%, 31%, 1);
 }
 
+footer > .row {
+  --bs-gutter-x: 0 !important;
+}
 
+.wrapper > h2 {
+  margin-bottom: 15px;
+}
 
 .wrapper {
   display: flex;
   flex-direction: column;
   width: 1000px;
   padding: 0px 24px;
-  
+}
+.wrapper-body {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .wrapper-column {
@@ -49,7 +60,7 @@ body {
   justify-content: center;
   width: 100%;
   background-color: #e6e6e6;
-  height: 100vh;
+  height: 100%;
 }
 .card img {
   height: 100%;
@@ -64,10 +75,13 @@ body {
   border: solid 1px #BDC9D1;
   margin-bottom: 12px;
   padding-right: 24px;
+  padding-left: 24px;
+  transition: transform 0.2s;
 }
 
 .card:hover {
   background-color: rgb(247, 247, 247);
+  transform: scale(1.02);
 }
 
 .card-items {
@@ -76,3 +90,14 @@ body {
   justify-content: center;
 }
 
+input[type="submit"] {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+input[type="submit"]:hover {
+  background: #094e83;
+}

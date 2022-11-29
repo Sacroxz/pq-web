@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set active_page = "postquirurgico" %}
-{% block title %} Formulario de Evaluacion de Paciente {% endblock %}
+{% block title %} Formulario de Evaluacion Post-Quirurgica {% endblock %}
 {% block head %}
   {{ super () }}
   <link rel="stylesheet" href="{{url_for('static',filename='css/multi_step_form.css')}}" />
@@ -64,5 +64,4 @@
     </div>
   </form>
   <script src="{{url_for('static',filename='js/multi_step_form.js')}}"></script>
-  {% include 'components/footer.html' %}
 {% endblock %}

@@ -3,17 +3,36 @@
 {% block title %} Iniciar Sesion {% endblock %}
 {% block head %}
   {{ super () }}
+  <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/multi_step_form.css')}}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
-  <form method="POST" action="/login">
-    {{ form.hidden_tag() }}
-    {{ form.mail }}
-    {{ form.password }}
-    {{ form.submit }}
-  </form>
-  {% with messages = get_flashed_messages() %} 
-    {% if messages %}
-      <div>{{ messages[0] }}</div>
-    {% endif %} 
-  {% endwith %}
+  <div class="row">
+    <div class="login-container col-md-12">
+      <h3>Inicio de Sesion</h3>
+      <div>
+        <p>Para ingresar al servicio de Intranet, primero debe iniciar sesion con su cuenta de funcionario.</p>
+      </div>
+      <form class="login-form" method="POST" action="/login">
+        <div>
+          {{ form.hidden_tag() }}
+          <p>Correo Electronico</p>
+          {{ form.mail }}
+        </div>
+        <div>
+          <p>Contrasena</p>
+          {{ form.password }}
+        </div>
+        <div>
+          {{ form.submit(class="form-btn") }}
+        </div>
+      </form>
+      {% with messages = get_flashed_messages() %} 
+        {% if messages %}
+          <div class="error">{{ messages[0] }}</div>
+        {% endif %} 
+      {% endwith %}
+    </div>
+  </div>
 {% endblock %}

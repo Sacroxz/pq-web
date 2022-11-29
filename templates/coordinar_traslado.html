@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set active_page = "postquirurgico" %}
-{% block title %} Formulario de Evaluacion de Paciente {% endblock %}
+{% block title %} Coordinar Traslado {% endblock %}
 {% block head %}
   {{ super () }}
   <link rel="stylesheet" href="{{url_for('static',filename='css/multi_step_form.css')}}" />
@@ -8,11 +8,12 @@
 
 {% endblock %}
 {% block content %}
-  <form method="POST" action="/evaluacion_paciente">
+  <form method="POST" id="regForm" action="/coordinar_traslado">
+    {{ coordinar_traslado_form.hidden_tag() }}
     <div class="tab">
       <h3>Seleccionar Paciente</h3>
       <p>RUT del Paciente</p>
-      {{ rut_form.rut }}
+      {{ coordinar_traslado_form.rut_paciente }}
     </div>
     <div class="tab">
       <div class="row">
@@ -33,22 +34,18 @@
     </div>
     <div class="tab">
       <div class="row">
-        <h3>Datos del Transporte</h3>
+        <h3>Datos del Traslado</h3>
         <div class="col-md-6">
-          <p>Patente</p>
+          <p>Seleccionar Vehiculo</p>
           {{ coordinar_traslado_form.patente }}
         </div>
         <div class="col-md-6">
-          <p>RUT del Conductor</p>
+          <p>Seleccionar Conductor</p>
           {{ coordinar_traslado_form.rut_conductor }}
         </div>
         <div class="col-md-6">
-          <p>Tipo Vehiculo</p>
-          {{ coordinar_traslado_form.tipo_vehiculo }}
-        </div>
-        <div class="col-md-6">
-          <p>Telefono del Conductor</p>
-          {{ coordinar_traslado_form.telefono_conductor }}
+          <p>Tipo de Traslado</p>
+          {{ coordinar_traslado_form.tipo }}
         </div>
       </div>
     </div>
@@ -64,5 +61,4 @@
     </div>
   </form>
   <script src="{{url_for('static',filename='js/multi_step_form.js')}}"></script>
-  {% include 'components/footer.html' %}
 {% endblock %}

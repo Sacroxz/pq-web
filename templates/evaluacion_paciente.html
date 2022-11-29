@@ -18,19 +18,19 @@
       <h3>Evaluacion del Paciente</h3>
       <div class="row">
         <div class="col-md-6">
-          <p>Temperatura</p>
+          <p>Temperatura (°C)</p>
           {{ evaluacion_paciente_form.temperatura }}
         </div>
         <div class="col-md-6">
-          <p>Frecuencia Cardiaca</p>
+          <p>Frecuencia Cardiaca (P/M)</p>
           {{ evaluacion_paciente_form.frecuencia_cardiaca }}
         </div>
         <div class="col-md-6">
-          <p>Presion Arterial</p>
+          <p>Presion Arterial (mm/Hg)</p>
           {{ evaluacion_paciente_form.presion_arterial }}
         </div>
         <div class="col-md-6">
-          <p>Frecuencia Respiratoria</p>
+          <p>Frecuencia Respiratoria (R/M)</p>
           {{ evaluacion_paciente_form.frecuencia_respiratoria }}
         </div>
         <div class="col-md-6">
@@ -60,5 +60,4 @@
     </div>
   </form>
   <script src="{{url_for('static',filename='js/multi_step_form.js')}}"></script>
-  {% include 'components/footer.html' %}
 {% endblock %}

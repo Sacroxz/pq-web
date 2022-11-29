@@ -1,42 +1,39 @@
 <head>
-  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/footer.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
 </head>
 <footer>
-    <div class="ffooter">
-        <div class="conjunto">
-            <div class="conjunto 2">
-                <div class="casilla">
-                    <p class="titulo">Gestion Salud</p>
-                    <ul>
-                        <li>DEIS</li>
-                        <li>GEIS - Registro Urgencia</li>
-                        <li>Gestion de Camas</li>
-                        <li>Proyecto MIS</li>
-                        <li>Urgencia Infantil</li>
-                    </ul>
-                </div>
-                <div class="casilla">
-                    <p class="titulo">Normas y Manuales</p>
-                    <ul>
-                        <li>DEIS</li>
-                        <li>GEIS - Registro Urgencia</li>
-                        <li>Gestion de Camas</li>
-                        <li>Proyecto MIS</li>
-                        <li>Urgencia Infantil</li>
-                    </ul>
-                </div>
-
-                <div class="casilla">
-                    <p class="titulo">Sistema</p>
-                    <ul>
-                        <li>DEIS</li>
-                        <li>GEIS - Registro Urgencia</li>
-                        <li>Gestion de Camas</li>
-                        <li>Proyecto MIS</li>
-                        <li>Urgencia Infantil</li>
-                    </ul>
-                </div>    
+    <div class="colors">
+        <span class="blue"></span>
+        <span class="red"></span>
+    </div>
+    <div class="row">
+        <div class="footer-column col-md-6">
+            <div>
+                <p>Sitio</p>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Iniciar Sesion</a></li>
+                    <li><a href="/perfil">Mi Perfil</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="footer-column col-md-6">
+            <div>
+                <p>Proceso Post-Quirurgico</p>
+                <ul>
+                    <li><a href="/evaluacion_paciente">Evaluar Paciente</a></li>
+                    <li><a href="/evaluacion_post_quirurgica">Evaluar Paciente Post-Anestesia</a></li>
+                    <li><a href="/coordinar_traslado">Coordinar Traslado</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="address">
+        <p>Servicio de Salud Metropolitano Sur Oriente - Dirección: Avda. Concha y Toro 3459, Puente Alto - Chile - Teléfono: (02) 25762300</p>
+        <div class="colors">
+            <span class="blue"></span>
+            <span class="red"></span>
         </div>
     </div>
 </footer>

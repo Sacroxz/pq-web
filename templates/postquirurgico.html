@@ -9,13 +9,13 @@
 {% if session['cargo'] != 'Anestesista' and session['cargo'] != 'Enfermera' %}
   {% include 'components/unauthorized.html' %}
 {% else %}
-  <h2>Formularios</h2>
+  <h2>Acciones</h2>
     <div class="row">
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
         <a href="/evaluacion_paciente">
           <div class="card">
-            <div>
-              <img src="https://picsum.photos/100/150" alt="picsum">
+            <div >
+              <img style="width: 60px; height: 150px" src="{{url_for('static', filename='svg/surgeon.svg')}}" alt="picsum">
             </div>
             <div class="card-items">
               <div class="card-title">
@@ -25,27 +25,68 @@
             </div>
           </div>
         </a>
+      </div> -->
+      <div class="col-md-6">
+        <a href="/evaluacion_paciente">
+          <div class="card">
+            <div style="padding: 0 12px">
+              <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/patient.svg')}}" alt="picsum">
+            </div>
+            <div class="card-items">
+              <div class="card-title">
+                <h3 style="max-width: 200px">Evaluacion de Paciente</h3>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
       <div class="col-md-6">
         <a href="/evaluacion_post_quirurgica">
           <div class="card">
-            <div>
-              <img src="https://picsum.photos/100/150" alt="picsum">
+            <div style="padding: 0 12px">
+              <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/report.svg')}}" alt="picsum">
             </div>
             <div class="card-items">
               <div class="card-title">
-                <h3 style="max-width: 200px">Evaluacion Post-Anestesica del Paciente</h3>
+                <h3 style="max-width: 200px">Indicar Cuidados Post-Anestesicos</h3>
               </div>
-              <div class="card-body">Este formulario permite guardar los signos vitales, dolor, sangrado y recuperacion post anestesica de un paciente.</div>
             </div>
           </div>
         </a>
       </div>
       <div class="col-md-6">
         <a href="/coordinar_traslado">
+          <div class="card" style="padding: 0 12px">
+            <div>
+              <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/ambulance.svg')}}" alt="picsum">
+            </div>
+            <div class="card-items">
+              <div class="card-title">
+                <h3 style="max-width: 200px">Coordinar Traslado</h3>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a href="/estado_paciente">
+          <div class="card" style="padding: 0 12px">
+            <div>
+              <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/healthcare.svg')}}" alt="picsum">
+            </div>
+            <div class="card-items">
+              <div class="card-title">
+                <h3 style="max-width: 200px">Ver Estado de Paciente</h3>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="col-md-6">
+        <a href="/coordinar_traslado">
           <div class="card">
             <div>
-              <img src="https://picsum.photos/100/150" alt="picsum">
+              <img style="width: 60px; height: 150px" src="{{url_for('static', filename='svg/surgeon.svg')}}" alt="picsum">
             </div>
             <div class="card-items">
               <div class="card-title">
@@ -55,8 +96,7 @@
             </div>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
 {% endif %}
-  {% include 'components/footer.html' %}
 {% endblock %}

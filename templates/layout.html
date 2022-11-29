@@ -14,10 +14,12 @@
   {% include 'components/navbar.html' %}
   <div class="app">
     <div class="wrapper">
-      {% include 'components/breadcrumb.html' %}
-        {% block content %}
-        {% endblock %}
-      {% include 'components/footer.html' %}
+        <div class="wrapper-body">
+          {% include 'components/breadcrumb.html' %}
+            {% block content %}
+            {% endblock %}
+        </div>
+        {% include 'components/footer.html' %}
     </div>
   </div>
 </body>

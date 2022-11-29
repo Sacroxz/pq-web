@@ -10,24 +10,21 @@
 {% if current_user.is_authenticated %}
   <div class="cubo">
     <div class="hola">
-        <p class="letra1">Buenas tardes {{ session['user'] }}</p>
+        <h2>Buenas tardes {{ session['user'] }}</h2>
         <p class="letra2">
           Bienvenido al Sistema de Gestion Quirurgica del Servicio de Salud Metropolitano Sur Oriente.
         </p>
     </div>
     <div class="hola2">
       <p class="letra3">Anuncios</p>
-        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+        <div class="columnas" ><p class="letra2">Se ha lanzado una nueva plataforma web para apoyar al Proceso Quirugico</p><p class="letra4">Hace 2 horas</p></div>
+
     </div>
 
     <div class="hola3">
       <p class="letra3">Actualizaciones</p>
-      <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
-        <div class="columnas" ><p class="letra2">Lorem ipsum</p><p class="letra4">Hace 10 horas</p></div>
+      <div class="columnas" ><p class="letra2">v1.0.1: Se ha implementado el formulario "Coordinar Traslado"</p><p class="letra4">Hace 1 hora</p></div>
+      <div class="columnas" ><p class="letra2">v1.0.0: Lanzamiento Inicial de la Plataforma</p><p class="letra4">Hace 3 horas</p></div>
     </div>
   </div>
 {% else %}

@@ -1,13 +1,13 @@
 from index import db
 from flask_login import UserMixin
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField, DateField, TimeField
 from wtforms.validators import InputRequired, Length, ValidationError
 
 class LoginForm(FlaskForm):
   mail = StringField('mail', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Mail"})
   password = PasswordField('password', validators=[InputRequired(), Length(min=4, max=80)], render_kw={"placeholder": "Password"})
-  submit = SubmitField("Login")
+  submit = SubmitField("Iniciar Sesion")
 
 class RutForm(FlaskForm):
   rut = StringField('rut', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Rut"})
@@ -38,12 +38,12 @@ class EvaluacionPostquirurgicaForm(FlaskForm):
   submit = SubmitField("Guardar")
 
 class CoordinarTrasladoForm(FlaskForm):
-  fecha = StringField('fecha', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Fecha"})
-  hora = StringField('hora', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Hora"})
+  rut_paciente = StringField('rut_paciente', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Rut"})
+  fecha = StringField('fecha', validators=[InputRequired()], render_kw={"placeholder": "Fecha"})
+  hora = StringField('hora', validators=[InputRequired()], render_kw={"placeholder": "Hora"})
   patente = StringField('patente', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Patente"})
-  tipo_vehiculo = StringField('tipo_vehiculo', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Tipo Vehiculo"})
+  tipo = SelectField('tipo', choices=["Particular", "Hospital"], validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Tipo Traslado"})
   rut_conductor = StringField('rut_conductor', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Rut Conductor"})
-  telefono_conductor = StringField('telefono_conductor', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Telefono Conductor"})
   direccion = StringField('direccion', validators=[InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Direccion"})
   submit = SubmitField("Guardar")
 

@@ -9,35 +9,49 @@
 {% block content %}
   <h2>Estado del Paciente</h2>
   <div>
-    <h3 style="margin-bottom: 5px">Datos Personales</h3>
-      <p>Nombre: {{ pac.nombre | capitalize }} {{ pac.apellido | capitalize }}</p>
-      <p>RUT: {{ pac.rut }}</p>
-      {% if pac.sexo == 0 %}
-        <p>Sexo: Masculino</p>
-      {% else %}
-        <p>Sexo: Femenino</p>
-      {% endif %}
-      <p>Edad: {{ pac.edad }}</p>
-      <p>Correo: {{ pac.correo }}</p>
-      <p>Telefono: {{ pac.telefono }}</p>
-      <p>Direccion: {{ pac.direccion }}</p>
+    <h3 style="margin-bottom: 5px">Datos del Paciente</h3>
+    <div class="card-container row col-md-12" style="padding: 10px 0;--bs-gutter-x: 0 !important;">
+      <div class="col-md-1" style="font-size: 16px; color: rgb(128, 128, 128)">
+        <p>Nombre</p>
+        <p>Rut</p>
+        <p>Sexo</p>
+        <p>Edad</p>
+        <p>Correo</p>
+        <p>Telefono</p>
+        <p>Direccion</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ pac.nombre | capitalize }} {{ pac.apellido | capitalize }}</p>
+        <p>{{ pac.rut }}</p>
+        {% if pac.sexo == 0 %}
+          <p>Masculino</p>
+        {% else %}
+          <p>Femenino</p>
+        {% endif %}
+        <p>{{ pac.edad }}</p>
+        <p>{{ pac.correo }}</p>
+        <p>{{ pac.telefono }}</p>
+        <p>{{ pac.direccion | capitalize }}</p>
+      </div>
   </div>
   <div style="margin-top: 15px">
     <h3 style="margin-bottom: 8px">Evaluaciones del Paciente</h3>
+    {% if not evaluaciones %}
+      <p>Paciente no tiene evaluaciones.</p>
+    {% endif %}
     <div class="row" style="--bs-gutter-x: 0 !important; margin-bottom: 50px">
       {% for eval in evaluaciones %}
-        <div class="card card-patient col-md-6" style="--bs-gutter-x: 0 !important; padding: 12px">
+        <div class="card card-patient col-md-12" style="--bs-gutter-x: 0 !important">
           <img style="height: 70px" src="{{url_for('static', filename='svg/report.svg')}}" alt="picsum">
           <a href="/postquirurgico/paciente/{{pac.id}}/evaluacion/{{eval.id}}">
             <div class="card-inner">
               <div>
-                <h3>ID Evaluacion: {{ eval.id }}</h3>
+                <h3>Evaluacion Post-Quirurgica del Paciente</h3>
                 <p style="text-align: center">{{ eval.fecha.strftime('%Y-%m-%d') }}</p>
               </div>
             </div>
           </a>
         </div>
-        
       {% endfor %}
     </div>
   </div>

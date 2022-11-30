@@ -8,10 +8,10 @@
 {% endblock %}
 {% block content %}
   <h2>Seleccionar Paciente</h2>
-  <div class="patient row">
+  <div class="patient row" style="margin-bottom: 50px">
   {% if pacientes %}
     {% for paciente in pacientes %}
-        <div class="card card-patient col-md-3">
+        <div class="card card-patient col-md-12">
           <a href="/postquirurgico/paciente/{{paciente.id}}">
             <div class="card-inner">
               {% if paciente.sexo == 0 %}

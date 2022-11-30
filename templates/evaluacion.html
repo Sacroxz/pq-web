@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% set active_page = "postquirurgico" %}
+{% block title %} Paciente {% endblock %}
+{% block head %}
+  {{ super () }}
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/estado_paciente.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+  <div>
+    <h2>Datos de la Evaluacion</h2>
+    <p>ID de la Evaluacion: {{ eva.id }}</p>
+    <p>Temperatura (°C): {{ eva.temperatura }}</p>
+    <p>Presion Arterial (P/M): {{ eva.presion_arterial }}</p>
+    <p>Frecuencia Cardiaca (mm/Hg): {{ eva.frecuencia_cardiaca }}</p>
+    <p>Frecuencia Respiratoria (R/M): {{ eva.frecuencia_respiratoria }}</p>
+    <p>Examen Fisico: {{ eva.examen_fisico }}</p>
+    <p>Zona Operacion: {{ eva.zona_operacion }}</p>
+    <p>Observacion: {{ eva.observacion }}</p>
+    <p>Fecha: {{ eva.fecha }}</p>
+  </div>
+{% endblock %}

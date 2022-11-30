@@ -72,7 +72,7 @@ footer > .row {
   flex-direction: row;
   justify-content: center;
   gap: 24px;
-  border: solid 1px #BDC9D1;
+  /* border: solid 1px #BDC9D1; */
   margin-bottom: 12px;
   padding-right: 24px;
   padding-left: 24px;

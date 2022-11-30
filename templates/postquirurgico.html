@@ -11,23 +11,8 @@
 {% else %}
   <h2>Acciones</h2>
     <div class="row">
-      <!-- <div class="col-md-6">
-        <a href="/evaluacion_paciente">
-          <div class="card">
-            <div >
-              <img style="width: 60px; height: 150px" src="{{url_for('static', filename='svg/surgeon.svg')}}" alt="picsum">
-            </div>
-            <div class="card-items">
-              <div class="card-title">
-                <h3>Evaluacion de Paciente</h3>
-              </div>
-              <div class="card-body">Este formulario permite guardar los signos vitales, el dolor, la funcion ventilatoria, y el examen fisico que tiene el paciente posterior a la anestesia.</div>
-            </div>
-          </div>
-        </a>
-      </div> -->
       <div class="col-md-6">
-        <a href="/evaluacion_paciente">
+        <a href="/postquirurgico/evaluacion_paciente">
           <div class="card">
             <div style="padding: 0 12px">
               <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/patient.svg')}}" alt="picsum">
@@ -41,7 +26,7 @@
         </a>
       </div>
       <div class="col-md-6">
-        <a href="/evaluacion_post_quirurgica">
+        <a href="/postquirurgico/evaluacion_post_quirurgica">
           <div class="card">
             <div style="padding: 0 12px">
               <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/report.svg')}}" alt="picsum">
@@ -55,7 +40,7 @@
         </a>
       </div>
       <div class="col-md-6">
-        <a href="/coordinar_traslado">
+        <a href="/postquirurgico/coordinar_traslado">
           <div class="card" style="padding: 0 12px">
             <div>
               <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/ambulance.svg')}}" alt="picsum">
@@ -69,7 +54,7 @@
         </a>
       </div>
       <div class="col-md-6">
-        <a href="/estado_paciente">
+        <a href="/postquirurgico/paciente">
           <div class="card" style="padding: 0 12px">
             <div>
               <img style="width: 70px; height: 150px" src="{{url_for('static', filename='svg/healthcare.svg')}}" alt="picsum">
@@ -82,21 +67,6 @@
           </div>
         </a>
       </div>
-      <!-- <div class="col-md-6">
-        <a href="/coordinar_traslado">
-          <div class="card">
-            <div>
-              <img style="width: 60px; height: 150px" src="{{url_for('static', filename='svg/surgeon.svg')}}" alt="picsum">
-            </div>
-            <div class="card-items">
-              <div class="card-title">
-                <h3>Coordinar Traslado</h3>
-              </div>
-              <div class="card-body">Este formulario permite coordinar el traslado para un paciente dado de alta.</div>
-            </div>
-          </div>
-        </a>
-      </div> -->
     </div>
 {% endif %}
 {% endblock %}

@@ -3,16 +3,34 @@
 {% block title %} Estado del Paciente {% endblock %}
 {% block head %}
   {{ super () }}
-  <link rel="stylesheet" href="{{url_for('static',filename='css/multi_step_form.css')}}" />
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/estado_paciente.css') }}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap-grid.min.css" rel="stylesheet">
-
 {% endblock %}
 {% block content %}
-  <form method="POST" action="/estado_paciente">
-      <h3>Seleccionar Paciente</h3>
-      <p>RUT del Paciente</p>
-      {{ rut_form.rut }}
-      {{ rut_form.submit }}
-  </form>
-  <script src="{{url_for('static',filename='js/multi_step_form.js')}}"></script>
+  <h2>Seleccionar Paciente</h2>
+  <div class="patient row">
+  {% if pacientes %}
+    {% for paciente in pacientes %}
+        <div class="card card-patient col-md-3">
+          <a href="/postquirurgico/paciente/{{paciente.id}}">
+            <div class="card-inner">
+              {% if paciente.sexo == 0 %}
+                <img style="height: 70px" src="{{url_for('static', filename='svg/male.svg')}}" alt="picsum">
+              {% else %}
+                <img style="height: 70px" src="{{url_for('static', filename='svg/female.svg')}}" alt="picsum">
+              {% endif %}
+              <div>
+                <h3>{{ paciente.nombre | capitalize }} {{ paciente.apellido | capitalize }}</h3>
+                <p>RUT: {{ paciente.rut }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+    {% endfor %}
+  {% else %}
+      <p>No hay pacientes registrados</p>
+  {% endif %}
+  </div>
+ 
+ 
 {% endblock %}

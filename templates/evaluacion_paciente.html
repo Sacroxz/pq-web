@@ -8,11 +8,12 @@
 
 {% endblock %}
 {% block content %}
-  <form method="POST" action="/evaluacion_paciente">
+  <form method="POST" id="regForm" action="/postquirurgico/evaluacion_paciente">
+    {{ evaluacion_paciente_form.hidden_tag() }}
     <div class="tab">
       <h3>Seleccionar Paciente</h3>
       <p>RUT del Paciente</p>
-      {{ rut_form.rut }}
+      {{ evaluacion_paciente_form.rut_paciente }}
     </div>
     <div class="tab">
       <h3>Evaluacion del Paciente</h3>
